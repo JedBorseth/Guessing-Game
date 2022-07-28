@@ -1,0 +1,402 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3 {
+  color: aliceblue;
+  font-size: 4rem;
+}
+a,
+a:hover,
+a:active,
+a:visited {
+  color: #faebd7;
+  text-decoration: none;
+}
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+.site-wrapper > div {
+  font-family: "Exo", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: #00000060;
+  background-image: radial-gradient(
+      #ffffff 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    radial-gradient(
+      #ffffff 1.2000000000000002px,
+      #00000060 1.2000000000000002px
+    );
+  background-size: 48px 48px;
+  background-position: 0 0, 24px 24px;
+  position: relative;
+}
+.splash a {
+  font-size: 1.25rem;
+  text-decoration: underline;
+  z-index: 5;
+}
+.splash img {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+}
+.help {
+  z-index: 999 !important;
+  position: absolute;
+  background-color: rgb(158, 187, 216);
+  width: 80%;
+  height: 80vh;
+  border-radius: 3rem;
+  display: grid;
+  grid-template-rows: 4rem 4rem 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  outline: 1rem solid black;
+}
+
+.help h2,
+.help h3 {
+  color: black;
+  text-align: center;
+  grid-column: span 3;
+}
+.help h4 {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 1rem;
+}
+.help p {
+  display: grid;
+  place-items: center;
+}
+a:hover {
+  content: url(./images/github.svg);
+  width: 5rem;
+  filter: invert(87%) sepia(24%) saturate(363%) hue-rotate(325deg)
+    brightness(108%) contrast(96%);
+  animation: github 1s ease-in-out;
+}
+@keyframes github {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.splash {
+  display: grid;
+  grid-template-rows: 50% 5%;
+  place-items: center;
+}
+.splash h2 {
+  font-size: 2rem;
+}
+.splash button {
+  padding: 1rem 3rem;
+  z-index: 5;
+}
+.select-area {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 10%;
+  grid-template-columns: repeat(4, 1fr);
+}
+.character {
+  border: 2px solid black;
+  margin: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  color: white;
+  text-align: center;
+  background-color: lightslategray;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
+.player-select .menu {
+  background-color: white;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+}
+
+.menu span {
+  width: 25%;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+.menu span button {
+  width: 4rem;
+}
+.start-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 12rem;
+  padding: 2rem;
+}
+.game-select {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+.board-map {
+  grid-row: 2;
+  width: 90%;
+  height: 20rem;
+  background-color: #00000036;
+}
+.game-select h2 {
+  grid-column: span 3;
+  width: 100%;
+  text-align: center;
+}
+.game-select .selected {
+  transform: translate(0px, -20px);
+  transition: transform 250ms ease-in-out;
+  filter: blur(1.2);
+  border: 1px solid greenyellow;
+}
+.game {
+  display: grid;
+  place-items: center;
+  padding: 0rem 5rem;
+}
+.game-board {
+  height: 100%;
+  width: 100%;
+  padding: 0rem 8rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.game-board .space {
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+}
+.game-board .blank {
+  background-color: grey;
+  grid-column: 2 / 6;
+  grid-row: 2 / 5;
+  width: 75%;
+  height: 100%;
+}
+.board-map {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.board-one,
+.board-bg-1 {
+  background-image: url(./images/george-crola-85769.jpg) !important;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.board-two,
+.board-bg-2 {
+  background-image: url(./images/george-durrie-89656.jpg) !important;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.board-three,
+.board-bg-3 {
+  background-image: url(./images/birch-3691340.jpg) !important;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.players {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+}
+.players > span {
+  width: 25%;
+  background-color: grey;
+  padding: 1rem;
+}
+.player-board {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  padding: 0rem 13rem;
+  gap: 1rem;
+}
+.board-square {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+}
+.endgame {
+  display: grid;
+  grid-template-rows: 0.5fr 4rem;
+  place-items: center;
+  text-align: center;
+}
+.endgame button {
+  margin: 1rem;
+}
+.endgame .character {
+  position: absolute;
+}
+.hidden {
+  display: none;
+}
+canvas {
+  position: absolute;
+  top: 0;
+}
+.shown {
+  background-color: red;
+}
+/* Cool Background From Codepen */
+/* https://codepen.io/mohaiman/pen/MQqMyo */
+/*                              */
+/*                              */
+.site-wrapper > div {
+  background: slategray;
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+}
+.site-wrapper > div > * {
+  z-index: 5;
+}
+.character {
+  z-index: 99;
+}
+.circles {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
